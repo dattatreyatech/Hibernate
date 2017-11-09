@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.am.entities">
+
+	<class name="JobsheetSparepart" table="JOBSHEET_SPAREPART">
+
+		<id name="sparepartNo" column="SPAREPART_NO">
+			<generator class="foreign">
+				<param name="property">sparepart</param>
+			</generator>
+		</id>
+
+		<property name="sparepartSaleDt" column="SPAREPART_SALE_DT" />
+
+		<property name="amount" column="AMOUNT" not-null="true" />
+
+		<many-to-one name="jobsheet" class="Jobsheet" column="JOBSHEET_NO" not-null="true" />
+
+
+		<one-to-one name="sparepart" class="Sparepart"/>
+
+	</class>
+
+</hibernate-mapping>

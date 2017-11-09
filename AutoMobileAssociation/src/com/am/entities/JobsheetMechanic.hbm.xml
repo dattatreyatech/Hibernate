@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.am.entities">
+
+	 <class name="JobsheetMechanic" table="JOBSHEET_MECHANIC">
+ 
+        <composite-id name="id" class="JobsheetMechanicId">
+            <key-many-to-one name="mechanicNo" column="MECHANIC_NO" />
+            <key-many-to-one name="jobsheetNo" column="JOBSHEET_NO" />
+        </composite-id>
+ 
+        <property name="duration" column="DURATION"/>        
+        <property name="comments" column="COMMENTS"/>
+        
+        <many-to-one name="jobsheet" class="Jobsheet" column="JOBSHEET_NO" not-null="true" />
+        
+        <many-to-one name="mechanic" class="Mechanic" column="MECHANIC_NO" not-null="true" />
+                
+    </class>
+</hibernate-mapping>

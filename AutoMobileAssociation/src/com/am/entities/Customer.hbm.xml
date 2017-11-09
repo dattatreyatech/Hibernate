@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.am.entities">
+ <class name="Customer" table="customer">
+  <!-- <composite-id class="CustomerId" mapped="false" name="id" unsaved-value="undefined">
+   <key-many-to-one column="CUSTOMER_NO" name="customerNo"/>
+   <key-many-to-one column="FIRST_NM" name="firstNm"/>
+   <key-many-to-one column="LAST_NM" name="lastNm"/>
+   <key-many-to-one column="MOBILE" name="mobile"/>
+   <key-many-to-one column="EMAIL_ADDRESS" name="emailAddress"/>
+   <key-many-to-one column="CUSTOMER_ADDRESS_ID" name="customerAddressId"/>
+  </composite-id> -->
+  <composite-id class="CustomerId" name="id">
+  <key-property  name="customerNo" column="CUSTOMER_NO" ></key-property>
+  </composite-id>
+  <many-to-one class="Address" column="CUSTOMER_ADDRESS_ID"
+   name="address" not-null="true" unique="true"/>
+  <set inverse="true" name="jobsheets" sort="unsorted" table="JOBSHEET">
+   <key column="CUSTOMER_NO_JOB" not-null="true"/>
+   <one-to-many class="Jobsheet"/>
+  </set>
+ </class>
+</hibernate-mapping>

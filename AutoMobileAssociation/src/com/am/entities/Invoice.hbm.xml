@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.am.entities">
+	
+	<class name="Invoice" table="INVOICE">
+        <id name="invoiceNo" column="INVOICE_NO">
+            <generator class="increment" />
+        </id>
+    
+        <property name="invoiceDt" column="INVOICE_DT"/>
+        
+        <property name="invoiceAmount" column="INVOICE_AMOUNT" />
+
+        <many-to-one name="jobsheet" class="Jobsheet" column="JOBSHEET_NO" not-null="true" unique="true" />
+       
+        <set name="bills" table="BILL" inverse="true">
+            <key column="INVOICE_NO" not-null="true" unique="true" />   
+            <one-to-many class="Bill" />
+        </set>
+       
+        <set name="repairsConducteds" table="REPAIRS_CONDUCTED" inverse="true">
+            <key column="INVOICE_NO" not-null="true" />            
+            <one-to-many class="RepairsConducted" />
+        </set>
+        
+    </class>
+
+</hibernate-mapping>
