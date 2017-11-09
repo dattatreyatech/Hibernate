@@ -7,8 +7,9 @@
 	 <class name="JobsheetMechanic" table="JOBSHEET_MECHANIC">
  
         <composite-id name="id" class="JobsheetMechanicId">
-            <key-many-to-one name="mechanicNo" column="MECHANIC_NO" />
-            <key-many-to-one name="jobsheetNo" column="JOBSHEET_NO" />
+            <!-- <key-many-to-one name="mechanicNo" column="MECHANIC_NO" />
+            <key-many-to-one name="jobsheetNo" column="JOBSHEET_NO" /> -->
+            <key-property name="mechanicNo" column="MECHANIC_NO_JOB" ></key-property>
         </composite-id>
  
         <property name="duration" column="DURATION"/>        

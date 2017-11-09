@@ -8,6 +8,6 @@
             <generator class="increment" />
         </id>             
         <property name="repair" column="REPAIR"/>
-        <many-to-one name="jobsheet" class="Jobsheet" column="JOBSHEET_NO"/>
+        <many-to-one name="jobsheet" class="Jobsheet" column="JOBSHEET_NO" insert="false" update="false"/>
     </class>
 </hibernate-mapping>

@@ -3,7 +3,6 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="lib" path="/FirstHibernate/lib/antlr-2.7.7.jar"/>
-	<classpathentry kind="lib" path="/FirstHibernate/lib/com.springsource.org.apache.log4j-1.2.15.jar"/>
 	<classpathentry kind="lib" path="/FirstHibernate/lib/dom4j-1.6.1.jar"/>
 	<classpathentry kind="lib" path="/FirstHibernate/lib/hibernate-commons-annotations-4.0.4.Final.jar"/>
 	<classpathentry kind="lib" path="/FirstHibernate/lib/hibernate-core-4.3.5.Final.jar" sourcepath="C:/Users/Dattatreya/.m2/repository/org/hibernate/hibernate-core/4.3.5.Final/hibernate-core-4.3.5.Final-sources.jar"/>
