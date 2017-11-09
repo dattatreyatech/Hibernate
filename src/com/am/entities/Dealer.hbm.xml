@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.am.entities">
+
+	 <class name="Dealer" table="dealer">
+        <id name="dealerCode" column="DEALER_CODE">
+            <generator class="increment" />
+        </id>
+          
+        <property name="dealerNm" column="DEALER_NM"/>
+        <property name="registrationDt" column="REGISTRATION_DT"/>
+        <property name="contactNo" column="CONTACT_NO"/>
+        <property name="emailAddress" column="EMAIL_ADDRESS"/>
+
+        <many-to-one name="address" class="Address" column="DEALER_ADDRESS_ID" not-null="true" unique="true" /> 
+        
+        <set name="serviceCenters" table="SERVICE_CENTER" inverse="true" >
+            <key column="DEALER_CODE" not-null="true"/>
+            <one-to-many class="ServiceCenter" />
+        </set>
+    </class>
+
+</hibernate-mapping>

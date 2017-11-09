@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.am.entities">
+
+		<class name="Bill" table="BILL">
+      
+        <id name="billNo" column="BILL_NO">
+            <generator class="increment" />
+        </id>
+      
+        <property name="billDt" column="BILL_DT"/>
+        <property name="amount" column="AMOUNT"/>
+        <property name="discount" column="DISCOUNT" />
+        <property name="netAmount" column="NET_AMOUNT" />
+        <property name="paymentType" column="PAYMENT_TYPE"/>
+
+        <many-to-one name="invoice" class="Invoice" column="INVOICE_NO" not-null="true" unique="true" />
+
+    </class>
+
+</hibernate-mapping>

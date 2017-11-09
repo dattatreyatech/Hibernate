@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.am.entities">
+	
+	<class name="Sparepart" table="SPAREPART">
+	
+	 <id name="sparepartNo" column="SPAREPART_NO">
+		  <generator class="increment"/>
+	 </id>
+		<property name="sparepartNm" column="SPAREPART_NM"/>
+        <property name="modelNo" column="MODEL_NO"/>
+        <property name="purchaseDt" column="PURCHASE_DT"/>
+        <property name="price" column="PRICE"/>
+       
+        <one-to-one name="jobsheetSparepart" class="JobsheetSparepart"/>
+		
+	</class>
+</hibernate-mapping>

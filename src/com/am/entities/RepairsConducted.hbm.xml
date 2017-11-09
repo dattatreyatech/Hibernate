@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.am.entities">
+
+	<class name="RepairsConducted" table="REPAIRS_CONDUCTED">
+	
+        <id name="repairConductedNo" column="REPAIR_CONDUCTED_NO">
+            <generator class="increment" />
+        </id>
+        <property name="repairConducted" column="REPAIR_CONDUCTED"/>
+        <property name="repairCharges" column="REPAIR_CHARGES"/>
+
+        <many-to-one name="invoice" class="Invoice" column="INVOICE_NO" not-null="true" />
+        
+    </class>
+</hibernate-mapping>
